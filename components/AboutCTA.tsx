@@ -13,7 +13,7 @@ export default function AboutCTA(){
           />
         </div>
         <div className="lg:col-span-7">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-cream">Hey, I'm Hayden Lindley.</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-cream">Hey, I&apos;m Hayden Lindley.</h2>
           <p className="mt-4 text-cream/80 text-lg">
             Designer-builder behind Corgi-verse. Portfolio:{" "}
             <a className="underline decoration-strawberry decoration-2" href="https://corgfolio.com" target="_blank">corgfolio.com</a>.
