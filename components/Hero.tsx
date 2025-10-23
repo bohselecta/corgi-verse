@@ -39,7 +39,7 @@ export default function Hero() {
               alt="Corgi-verse emblem"
               width={560}
               height={560}
-              className="w-full h-auto animate-float drop-shadow-[0_30px_80px_rgba(124,58,237,.45)]"
+              className="w-full h-auto animate-float drop-shadow-[0_30px_80px_rgba(124,58,237,.45)] [filter:drop-shadow(0_0_0_3px_#22D3EE)]"
               priority
             />
           </div>

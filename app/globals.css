@@ -16,3 +16,6 @@ body { @apply bg-night text-cream; }
   border: 1px solid rgba(255,255,255,.12);
   border-radius: var(--r);
 }
+.logo-outline {
+  filter: drop-shadow(0 0 0 1px white);
+}
