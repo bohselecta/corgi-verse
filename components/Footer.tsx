@@ -14,7 +14,7 @@ export default function Footer(){
           <li><a href="https://vibecherry.com">VibeCherry</a></li>
         </ul></div>
         <div><h4 className="font-semibold mb-3">Company</h4><ul className="space-y-2 text-cream/80">
-          <li><a href="#about">About</a></li><li><a href="mailto:hello@corgi-verse.com">Contact</a></li>
+          <li><a href="#about">About</a></li><li><a href="mailto:hlindley@outlook.com">Contact</a></li>
         </ul></div>
         <div><h4 className="font-semibold mb-3">Social</h4><ul className="space-y-2 text-cream/80">
           <li><a href="#">Twitter</a></li><li><a href="#">Discord</a></li>

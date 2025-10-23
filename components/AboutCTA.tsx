@@ -19,7 +19,7 @@ export default function AboutCTA(){
             <a className="underline decoration-strawberry decoration-2" href="https://corgfolio.com" target="_blank">corgfolio.com</a>.
           </p>
           <div className="mt-6 flex gap-3">
-            <Button variant="primaryDark" onClick={()=>location.href="mailto:hello@corgi-verse.com"}>Contact</Button>
+            <Button variant="primaryDark" onClick={()=>location.href="mailto:hlindley@outlook.com"}>Contact</Button>
             <Button variant="outlineDark" onClick={()=>location.href="https://corgfolio.com"}>View Portfolio</Button>
           </div>
         </div>

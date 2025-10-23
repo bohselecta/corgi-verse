@@ -22,7 +22,6 @@ export default function Products(){
               <p className="mt-2 text-cream/75">Host your own AI with Ollama and share a public link—time-limited, private, fast.</p>
               <div className="mt-4 flex gap-3">
                 <Button variant="cyan" onClick={()=>location.href="https://mygum.my"}>Visit mygum.my</Button>
-                <Button variant="outlineDark" onClick={()=>location.href="https://mygum.my#templates"}>Browse Templates</Button>
               </div>
             </div>
           </div>
@@ -37,8 +36,7 @@ export default function Products(){
               <h3 className="text-xl font-semibold text-cream">VibeCherry — Desktop vibe coder for Mac</h3>
               <p className="mt-2 text-cream/75">Local-first creative coding environment powered by Ollama. Flow-friendly, fast.</p>
               <div className="mt-4 flex gap-3">
-                <Button variant="primaryDark" onClick={()=>location.href="https://vibecherry.com"}>Download for macOS</Button>
-                <Button variant="outlineDark" onClick={()=>location.href="https://vibecherry.com#showcase"}>See Showcase</Button>
+                <Button variant="primaryDark" onClick={()=>location.href="https://vibecherry.com"}>Visit vibecherry.com</Button>
               </div>
             </div>
           </div>

@@ -16,7 +16,7 @@ export default function Hero() {
         {/* Copy */}
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/10 text-cream/90">
-            🐾 Independent software studio — local-first, candy-tech
+            🐾 Independent software studio — local-first, always-free
           </span>
           <h1 className="mt-6 [text-wrap:balance] font-extrabold leading-tight">
             <span className="block text-gradient text-5xl md:text-7xl">Playful by design.</span>
