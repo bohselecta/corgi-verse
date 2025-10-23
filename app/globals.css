@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --r: 1.25rem; }
+html { color-scheme: dark; } /* base dark */
+body { @apply bg-night text-cream; }
+
+.text-gradient {
+  background: linear-gradient(90deg,#EC4899,#7C3AED);
+  -webkit-background-clip:text; background-clip:text; color: transparent;
+}
+.glass-dark {
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r);
+}
