@@ -12,6 +12,9 @@ export default function Footer(){
         <div><h4 className="font-semibold mb-3">Products</h4><ul className="space-y-2 text-cream/80">
           <li><a href="https://mygum.my">Gummy</a></li>
           <li><a href="https://vibecherry.com">VibeCherry</a></li>
+          <li><a href="https://cuidado-pagihall.vercel.app/">PAGI Hall</a></li>
+          <li><a href="https://altiplano-landing.vercel.app/">Altiplano</a></li>
+          <li><a href="https://filecherry.com">FileCherry</a></li>
         </ul></div>
         <div><h4 className="font-semibold mb-3">Company</h4><ul className="space-y-2 text-cream/80">
           <li><a href="#about">About</a></li><li><a href="mailto:hlindley@outlook.com">Contact</a></li>
