@@ -86,7 +86,7 @@ export default function Products(){
               <h3 className="text-xl font-semibold text-cream">FileCherry — File management made simple</h3>
               <p className="mt-2 text-cream/75">Streamlined file organization and management tools for the modern workspace.</p>
               <div className="mt-4 flex gap-3">
-                <Button variant="primaryDark" onClick={()=>location.href="https://filecherry.com"}>Visit filecherry.com</Button>
+                <Button variant="primaryDark" onClick={()=>location.href="https://filecherry-mygummy.vercel.app/"}>Visit FileCherry</Button>
               </div>
             </div>
           </div>
