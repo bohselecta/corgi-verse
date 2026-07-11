@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">SongSesh</title>
+  <desc id="desc">A crossfade record symbol in blue, magenta, and amber.</desc>
+  <defs>
+    <linearGradient id="songSeshGradient" x1="10" y1="18" x2="86" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1fb6ff"/>
+      <stop offset=".48" stop-color="#ff35d4"/>
+      <stop offset="1" stop-color="#ff9f1c"/>
+    </linearGradient>
+    <filter id="songSeshGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="48" cy="48" r="42" fill="#06080c" stroke="#323744" stroke-width="2"/>
+  <circle cx="48" cy="48" r="33" fill="none" stroke="#252a34" stroke-width="1" stroke-dasharray="2 5"/>
+  <path d="M23 32c8-15 38-18 48-5 7 9 1 19-12 21l-22 4c-13 2-18 13-10 21 10 10 35 8 45-7" fill="none" stroke="url(#songSeshGradient)" stroke-width="8" stroke-linecap="round" filter="url(#songSeshGlow)"/>
+  <path d="M18 48h60" stroke="#3c424e" stroke-width="2" stroke-linecap="round"/>
+  <rect x="43" y="42" width="10" height="12" rx="3" fill="#f5f7fb" stroke="#ff35d4" stroke-width="1.5"/>
+  <circle cx="48" cy="48" r="2" fill="#050608"/>
+  <path d="M27 20l4 7M69 69l4 7" stroke="#e2bb6d" stroke-width="2" stroke-linecap="round" opacity=".82"/>
+</svg>
