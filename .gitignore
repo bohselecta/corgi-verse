@@ -12,6 +12,9 @@ out/
 build/
 dist/
 
+# Generated acceptance artifacts
+artifacts/
+
 # Environment variables
 .env
 .env.local
