@@ -23,6 +23,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: npm run test:presentation
       - name: Production build
         shell: bash
         run: |

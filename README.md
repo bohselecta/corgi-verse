@@ -10,7 +10,7 @@ The site distinguishes public products from working internal software rather tha
 
 SongSesh is the nightclub wing of Corgi-Verse Software: a local-first AI-assisted DJ transition workstation where Gamma helps the user analyze two tracks, rehearse or perform an accepted blend, and export a local WAV with a proof receipt.
 
-The Corgi-Verse card is intentionally labeled **LOCAL ALPHA**. It does not claim a public download, live Suno generation, completed macOS signing/notarization, or final listening acceptance. The canonical application repository is private: `bohselecta/songseshapp`.
+The Corgi-Verse card is intentionally labeled **LOCAL ALPHA**. It does not claim a public download, live Suno generation, completed macOS signing/notarization, or final listening acceptance. The canonical application source is `bohselecta/songseshapp`; source visibility is not a release or download claim.
 
 SongSesh can accept a local `songsesh.crate-drop.v1` package from POLYGLYPH or another authorized tool and can export a provider-neutral music-generation request. Provider routing, credentials, Cost Shield, and generation receipts remain outside the landing site.
 

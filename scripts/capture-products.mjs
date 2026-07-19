@@ -1,6 +1,7 @@
-import { existsSync, mkdirSync, rmSync } from 'node:fs';
-import { spawn, spawnSync } from 'node:child_process';
+import { existsSync, mkdirSync } from 'node:fs';
+import { spawn } from 'node:child_process';
 import { resolve } from 'node:path';
+import { chromium } from 'playwright';
 
 const root = resolve(import.meta.dirname, '..');
 const outputDir = resolve(root, 'artifacts/corgiverse-products');
@@ -14,45 +15,67 @@ const candidates = [
   '/usr/bin/chromium',
   '/usr/bin/chromium-browser',
 ].filter(Boolean);
-const chromium = candidates.find(existsSync);
-if (!chromium) throw new Error(`Chrome/Chromium was not found. Checked: ${candidates.join(', ')}`);
+const executablePath = candidates.find(existsSync);
+
+if (!executablePath) {
+  throw new Error(`Chrome/Chromium was not found. Checked: ${candidates.join(', ')}`);
+}
+
 mkdirSync(outputDir, { recursive: true });
 
 let server;
+let browser;
 try {
-  server = spawn('npm', ['run', 'start', '--', '-H', '127.0.0.1', '-p', '3000'], { cwd: root, stdio: 'ignore' });
+  server = spawn('npm', ['run', 'start', '--', '-H', '127.0.0.1', '-p', '3000'], {
+    cwd: root,
+    stdio: 'ignore',
+  });
+
   let ready = false;
   for (let attempt = 0; attempt < 180; attempt += 1) {
     try {
-      if ((await fetch(baseUrl)).ok) { ready = true; break; }
-    } catch { /* Next is still starting. */ }
+      if ((await fetch(baseUrl)).ok) {
+        ready = true;
+        break;
+      }
+    } catch {
+      // Next is still starting.
+    }
     await sleep(100);
   }
   if (!ready) throw new Error('Next did not become ready on port 3000.');
 
+  browser = await chromium.launch({ headless: true, executablePath });
   const captures = [
     { name: 'corgiverse-products-1440x1100.png', width: 1440, height: 1100 },
     { name: 'corgiverse-products-390x844.png', width: 390, height: 844 },
   ];
+
   for (const capture of captures) {
-    const profile = `/tmp/corgiverse-${process.pid}-${capture.width}`;
-    rmSync(profile, { recursive: true, force: true });
-    const output = resolve(outputDir, capture.name);
-    const result = spawnSync(chromium, [
-      '--headless=new',
-      '--no-sandbox',
-      '--disable-gpu',
-      '--hide-scrollbars',
-      '--force-device-scale-factor=1',
-      `--user-data-dir=${profile}`,
-      `--window-size=${capture.width},${capture.height}`,
-      `--screenshot=${output}`,
-      `${baseUrl}/#products`,
-    ], { cwd: root, encoding: 'utf8' });
-    rmSync(profile, { recursive: true, force: true });
-    if (result.status !== 0 || !existsSync(output)) throw new Error(result.stderr || `Capture failed: ${capture.name}`);
-    console.log(`PASS ${capture.width}x${capture.height}: ${output}`);
+    const context = await browser.newContext({
+      viewport: { width: capture.width, height: capture.height },
+      deviceScaleFactor: 1,
+    });
+    const page = await context.newPage();
+    await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 });
+    await page.evaluate(() =>
+      Promise.race([
+        document.fonts.ready,
+        new Promise((resolveWait) => window.setTimeout(resolveWait, 5_000)),
+      ]),
+    );
+    await page.addStyleTag({ content: 'header { display: none !important; }' });
+
+    const productShelf = page.locator('#products');
+    await productShelf.waitFor({ state: 'visible', timeout: 15_000 });
+    await productShelf.screenshot({
+      path: resolve(outputDir, capture.name),
+      animations: 'disabled',
+    });
+    await context.close();
+    console.log(`PASS ${capture.width}px product shelf: ${resolve(outputDir, capture.name)}`);
   }
 } finally {
+  await browser?.close();
   server?.kill('SIGTERM');
 }
