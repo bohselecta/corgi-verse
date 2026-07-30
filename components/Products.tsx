@@ -38,71 +38,21 @@ export default function Products(){
           </div>
         </DarkCard>
 
-        {/* Gummy */}
-        <DarkCard>
+        {/* Gummy OS */}
+        <DarkCard className="relative overflow-hidden md:col-span-2 lg:col-span-1 border-[#7C2FD0]/35">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_15%,rgba(124,47,208,.18),transparent_42%),radial-gradient(circle_at_88%_88%,rgba(242,181,68,.12),transparent_38%)]" />
           <div className="flex items-start gap-5">
-            <img src="/images/red-gummy-bear.png" alt="Gummy" className="h-16 w-16 object-contain" />
+            <img
+              src="https://www.mygum.my/brand/gummy/web/gummy-mark-head-square.webp"
+              alt="Gummy OS"
+              className="h-20 w-20 shrink-0 object-contain drop-shadow-[0_0_22px_rgba(124,47,208,.32)]"
+            />
             <div>
-              <h3 className="text-xl font-semibold text-cream">Gummy — Local LLM, shared securely</h3>
-              <p className="mt-2 text-cream/75">Host your own AI with Ollama and share a public link—time-limited, private, fast.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F2B544]">Gummy OS</p>
+              <h3 className="mt-1 text-xl font-semibold text-cream">A computer you can open.</h3>
+              <p className="mt-2 text-cream/75">A browser-delivered personal creative computer for persistent Actors, executable Agents, files, apps, and governed Productions.</p>
               <div className="mt-4 flex gap-3">
-                <Button variant="cyan" onClick={()=>location.href="https://mygum.my"}>Visit mygum.my</Button>
-              </div>
-            </div>
-          </div>
-        </DarkCard>
-
-        {/* VibeCherry */}
-        <DarkCard>
-          <div className="flex items-start gap-5">
-            <img src="/images/vibecherry-logo.png" alt="VibeCherry" className="h-16 w-16 object-contain" />
-            <div>
-              <h3 className="text-xl font-semibold text-cream">VibeCherry — Desktop vibe coder for Mac</h3>
-              <p className="mt-2 text-cream/75">Local-first creative coding environment powered by Ollama. Flow-friendly, fast.</p>
-              <div className="mt-4 flex gap-3">
-                <Button variant="primaryDark" onClick={()=>location.href="https://vibecherry.com"}>Visit vibecherry.com</Button>
-              </div>
-            </div>
-          </div>
-        </DarkCard>
-
-        {/* PAGI Hall */}
-        <DarkCard>
-          <div className="flex items-start gap-5">
-            <img src="/images/pagi-logo.svg" alt="PAGI Hall" className="h-16 w-16 object-contain" />
-            <div>
-              <h3 className="text-xl font-semibold text-cream">PAGI Hall — Civic AI conversations</h3>
-              <p className="mt-2 text-cream/75">A quiet internet inside a villa where your digital cloak listens, speaks, and learns alongside you.</p>
-              <div className="mt-4 flex gap-3">
-                <Button variant="cyan" onClick={()=>location.href="https://cuidado-pagihall.vercel.app/"}>Visit PAGI Hall</Button>
-              </div>
-            </div>
-          </div>
-        </DarkCard>
-
-        {/* Altiplano */}
-        <DarkCard>
-          <div className="flex items-start gap-5">
-            <img src="/images/altiplano-logo.svg" alt="Altiplano" className="h-16 w-16 object-contain" />
-            <div>
-              <h3 className="text-xl font-semibold text-cream">Altiplano — Knowledge search engine</h3>
-              <p className="mt-2 text-cream/75">Search your knowledge, not the web. Private AI-powered search with advanced guardrails and confidence scores.</p>
-              <div className="mt-4 flex gap-3">
-                <Button variant="primaryDark" onClick={()=>location.href="https://altiplano-landing.vercel.app/"}>Visit Altiplano</Button>
-              </div>
-            </div>
-          </div>
-        </DarkCard>
-
-        {/* FileCherry */}
-        <DarkCard>
-          <div className="flex items-start gap-5">
-            <img src="/images/filecherry-logo.png" alt="FileCherry" className="h-16 w-16 object-contain" />
-            <div>
-              <h3 className="text-xl font-semibold text-cream">FileCherry — File management made simple</h3>
-              <p className="mt-2 text-cream/75">Streamlined file organization and management tools for the modern workspace.</p>
-              <div className="mt-4 flex gap-3">
-                <Button variant="cyan" onClick={()=>location.href="https://filecherry-mygummy.vercel.app/"}>Visit FileCherry</Button>
+                <Button variant="cyan" onClick={()=>location.href="https://www.mygum.my/"}>Open Gummy OS</Button>
               </div>
             </div>
           </div>
